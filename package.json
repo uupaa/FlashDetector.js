@@ -1,9 +1,9 @@
 {
   "name": "uupaa.flashready.js",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Flash will detect whether the available.",
   "url": "https://github.com/uupaa/FlashReady.js",
-  "keywords": ["uupaa", "WebModule", "Unstable"],
+  "keywords": ["flash", "detect", "uupaa", "WebModule", "Unstable"],
   "repository": {
     "type": "git",
     "url": "https://github.com/uupaa/FlashReady.js.git"
