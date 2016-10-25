@@ -13,26 +13,18 @@ This module made of [WebModule](https://github.com/uupaa/WebModule).
 ## Browser, NW.js and Electron
 
 ```js
-<script src="<module-dir>/lib/WebModule.js"></script>
-<script src="<module-dir>/lib/FlashReady.js"></script>
-<script>
-    ...
-</script>
-```
+<script src="lib/WebModule.js"></script>
+<script src="lib/FlashReady.js"></script>
 
-## WebWorkers
+window.onload = function() {
+  var flash = new FlashReady({
+    swf: "as3/FlashReady/bin/FlashReady.swf",
+    callback: function(ready) {
+      console.log("flash.ready", flash.ready);
+      alert(ready);
 
-```js
-importScripts("<module-dir>/lib/WebModule.js");
-importScripts("<module-dir>/lib/FlashReady.js");
-
-```
-
-## Node.js
-
-```js
-require("<module-dir>/lib/WebModule.js");
-require("<module-dir>/lib/FlashReady.js");
-
+    }
+  });
+}
 ```
 
