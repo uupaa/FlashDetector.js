@@ -1,4 +1,4 @@
-// FlashReady test
+// FlashDetector test
 
 onmessage = function(event) {
     self.unitTest = event.data; // { message, setting: { secondary, baseDir } }
@@ -21,8 +21,6 @@ onmessage = function(event) {
     __MODULES__
     __WMTOOLS__
     __SOURCES__
-    __OUTPUT__
-    __TEST_CASE__
 
     self.postMessage(self.unitTest);
 };

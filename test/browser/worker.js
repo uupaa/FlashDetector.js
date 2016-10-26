@@ -1,4 +1,4 @@
-// FlashReady test
+// FlashDetector test
 
 onmessage = function(event) {
     self.unitTest = event.data; // { message, setting: { secondary, baseDir } }
@@ -20,9 +20,7 @@ onmessage = function(event) {
 
     
     importScripts("../wmtools.js");
-    importScripts("../../lib/FlashReady.js");
-    importScripts("../../release/FlashReady.w.min.js");
-    importScripts("../testcase.js");
+    importScripts("../../lib/FlashDetector.js");
 
     self.postMessage(self.unitTest);
 };

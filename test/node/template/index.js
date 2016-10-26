@@ -1,4 +1,4 @@
-// FlashReady test
+// FlashDetector test
 
 require("../../lib/WebModule.js");
 
@@ -9,6 +9,4 @@ WebModule.PUBLISH = __WEBMODULE_PUBLISH__;
 __MODULES__
 __WMTOOLS__
 __SOURCES__
-__OUTPUT__
-__TEST_CASE__
 

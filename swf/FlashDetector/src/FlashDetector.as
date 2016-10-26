@@ -3,8 +3,8 @@ package {
     import flash.events.Event;
     import flash.external.ExternalInterface;
 
-    public class FlashReady extends Sprite {
-        public function FlashReady() {
+    public class FlashDetector extends Sprite {
+        public function FlashDetector() {
             if (stage) {
                 init();
             } else {

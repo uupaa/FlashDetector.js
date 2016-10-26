@@ -1,6 +1,6 @@
-var ModuleTestFlashReady = (function(global) {
+var ModuleTestFlashDetector = (function(global) {
 
-var test = new Test(["FlashReady"], { // Add the ModuleName to be tested here (if necessary).
+var test = new Test(["FlashDetector"], { // Add the ModuleName to be tested here (if necessary).
         disable:    false, // disable all tests.
         browser:    false,  // enable browser test.
         worker:     false,  // enable worker test.

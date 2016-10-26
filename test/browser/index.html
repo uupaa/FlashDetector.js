@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>FlashReady test</title>
+<!DOCTYPE html><html><head><title>FlashDetector test</title>
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <meta charset="utf-8"></head><body>
 
@@ -11,16 +11,15 @@ WebModule.PUBLISH = true;
 
 
 <script src="../wmtools.js"></script>
-<script src="../../lib/FlashReady.js"></script>
+<script src="../../lib/FlashDetector.js"></script>
 
 <script>
 window.onload = function() {
-  var flash = new FlashReady({
-    swf: "../../as3/FlashReady/bin/FlashReady.swf",
-    callback: function(ready) {
-      console.log("flash.ready", flash.ready);
-      alert(ready);
-
+  var flash = new FlashDetector({
+    swf: "../../swf/FlashDetector/bin/FlashDetector.swf",
+    callback: function(flashEnabled) { // @arg Boolean
+      console.log(flashEnabled === flash.enabled); // -> true
+      alert(flash.enabled);
     }
   });
 }

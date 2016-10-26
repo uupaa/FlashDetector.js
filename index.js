@@ -1,3 +1,3 @@
-//module.exports = require("./bin/FlashReady");
-module.exports = require("./lib/FlashReady");
+//module.exports = require("./bin/FlashDetector");
+module.exports = require("./lib/FlashDetector");
 

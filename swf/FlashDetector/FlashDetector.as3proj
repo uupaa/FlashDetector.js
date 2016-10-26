@@ -4,7 +4,7 @@
   <output>
     <movie outputType="Application" />
     <movie input="" />
-    <movie path="bin\FlashReady.swf" />
+    <movie path="bin\FlashDetector.swf" />
     <movie fps="1" />
     <movie width="1" />
     <movie height="1" />
@@ -72,7 +72,7 @@
   </library>
   <!-- Class files to compile (other referenced classes will automatically be included) -->
   <compileTargets>
-    <compile path="src\FlashReady.as" />
+    <compile path="src\FlashDetector.as" />
   </compileTargets>
   <!-- Paths to exclude from the Project Explorer tree -->
   <hiddenPaths>

@@ -1,12 +1,12 @@
 {
-  "name": "uupaa.flashready.js",
-  "version": "0.0.2",
+  "name": "uupaa.flashdetector.js",
+  "version": "0.1.0",
   "description": "Flash will detect whether the available.",
-  "url": "https://github.com/uupaa/FlashReady.js",
-  "keywords": ["flash", "detect", "uupaa", "WebModule", "Unstable"],
+  "url": "https://github.com/uupaa/FlashDetector.js",
+  "keywords": ["flash", "detect", "uupaa", "WebModule"],
   "repository": {
     "type": "git",
-    "url": "https://github.com/uupaa/FlashReady.js.git"
+    "url": "https://github.com/uupaa/FlashDetector.js.git"
   },
   "scripts": {
     "sync": "node ../WebModule/run/sync.js; npm update; node ../WebModule/run/page.js",
@@ -18,12 +18,12 @@
     "test": "npm run min; npm run node; npm run browser",
     "node": "NODE_ENV=production NODE_PATH=lib node test/node/index.js",
     "noded": "NODE_ENV=production NODE_PATH=lib node --debug-brk test/node/index.js",
-    "browser": "open http://localhost:8000/FlashReady.js/test/browser/index.html",
+    "browser": "open http://localhost:8000/FlashDetector.js/test/browser/index.html",
     "el": "electron test/el",
     "nw": "nw test/nw",
     "add-src": "node ../WebModule/run/add-src.js",
     "add-subclass": "node ../WebModule/run/add-subclass.js",
-    "sim": "node ../WebModule/run/sim.js http://localhost:8000/FlashReady.js/test/browser/index.html",
+    "sim": "node ../WebModule/run/sim.js http://localhost:8000/FlashDetector.js/test/browser/index.html",
     "simx": "node ../WebModule/run/sim.js stop",
     "lint": "eslint lib/*.js",
     "score": "node ../WebModule/run/score.js; open lint/plato/index.html",
@@ -36,33 +36,33 @@
     "develop": false,
     "label": ["@dev"],
     "browser": {
-      "output": "release/FlashReady.b.min.js",
+      "output": "release/FlashDetector.b.min.js",
       "source": [
-        "lib/FlashReady.js"
+        "lib/FlashDetector.js"
       ]
     },
     "worker": {
-      "output": "release/FlashReady.w.min.js",
+      "output": "release/FlashDetector.w.min.js",
       "source": [
-        "lib/FlashReady.js"
+        "lib/FlashDetector.js"
       ]
     },
     "node": {
-      "output": "release/FlashReady.n.min.js",
+      "output": "release/FlashDetector.n.min.js",
       "source": [
-        "lib/FlashReady.js"
+        "lib/FlashDetector.js"
       ]
     },
     "nw": {
-      "output": "release/FlashReady.nw.min.js",
+      "output": "release/FlashDetector.nw.min.js",
       "source": [
-        "lib/FlashReady.js"
+        "lib/FlashDetector.js"
       ]
     },
     "el": {
-      "output": "release/FlashReady.el.min.js",
+      "output": "release/FlashDetector.el.min.js",
       "source": [
-        "lib/FlashReady.js"
+        "lib/FlashDetector.js"
       ]
     }
   },
