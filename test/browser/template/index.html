@@ -46,22 +46,18 @@ window.onload = function() {
         flashvars: "debug=1",
         callback: function(flashEnabled) {
             console.log("flash.enabled", flash.enabled, flashEnabled); // -> true, true
-            otherUsecase();
+            use();
         }
     });
 };
 
-function otherUsecase() {
-    var obj = flash.flashObject;
-    if (obj) {
-        setTimeout(function() {
-            flash.detach();
-            console.log(flash.enabled, flash.enabled === false ? "ok" : "ng");
-            flash.attach(document.body, function(flashEnabled) {
-                console.log("re-attached. flashEnabled", flash.enabled, flashEnabled); // -> true, true
-            });
-        }, 3000);
-    }
+function use() {
+    setTimeout(function() {
+        flash.detach();
+        flash.attach(document.body, function(response) {
+            console.log("re-attached. flashEnabled", response); // -> FLASH_READY
+        });
+    }, 3000);
 }
 
 var stopTime = Date.now() + 10 * 1000;
