@@ -20,6 +20,7 @@ release/*.min.js
 ## dust
 lib/*.min.js
 npm-debug.log
+swf/FlashDetector/obj
 
 ## ignore gh-pages dir
 ## $ git-new-workdir . gh-pages gh-pages

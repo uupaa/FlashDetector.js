@@ -22,4 +22,5 @@ release/*.min.js
 ## dust
 lib/*.min.js
 npm-debug.log
+swf/FlashDetector/obj
 
