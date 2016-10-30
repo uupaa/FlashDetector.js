@@ -35,7 +35,6 @@ package {
                 ExternalInterface.call("ExternalInterface." + ExternalInterface.objectID, "FLASH_READY");
 
                 setSecuritySetting();
-                as_init();
                 debug && addEventListener("enterFrame", onEnterFrame);
             }
         }
