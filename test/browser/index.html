@@ -12,27 +12,15 @@ WebModule.VERBOSE = true;
 WebModule.PUBLISH = true;
 </script>
 
-
+<script src="../../node_modules/uupaa.useragent.js/node_modules/uupaa.webgldetector.js/lib/WebGLDetector.js"></script>
+<script src="../../node_modules/uupaa.useragent.js/lib/UserAgent.js"></script>
 <script src="../wmtools.js"></script>
 <script src="../../lib/FlashDetector.js"></script>
 
 <div id="container" style="background-color:green; width:100%; height:100%"></div>
 <script>
-/*
-window.onload = function() {
-  var flash = new FlashDetector({
-    swf: "../../swf/FlashDetector/bin/FlashDetector.swf",
-    callback: function(flashEnabled) { // @arg Boolean
-      console.log(flashEnabled === flash.enabled); // -> true
-      alert(flash.enabled);
-    }
-  });
-}
- */
 // ExtenalInterface は js 側で removeChild した後にどうなるか?
-// 1. DOM Tree に戻さなくてもアクセスが可能か?
-// 2. DOM Tree に戻せばアクセスが可能になるか?
-// 3. 完全に利用不能になるのか?
+// DOM Tree に戻せばアクセスが可能になるか? -> 可能。Flash側でmainクラスのコンストラクタが呼ばれる(再初期化される)
 var flash = null;
 window.onload = function() {
     var id = "external123";
@@ -44,25 +32,11 @@ window.onload = function() {
         timeout: 2000,
         container: document.querySelector("#container"),
         flashvars: "debug=1",
-        callback: function(flashEnabled) {
-            console.log("flash.enabled", flash.enabled, flashEnabled); // -> true, true
-            otherUsecase();
+        callback: function(flashEnabled, elapsedTime) {
+            console.log("flash.enabled", flash.enabled, flashEnabled, elapsedTime); // -> true, true, nnn
         }
     });
 };
-
-function otherUsecase() {
-    var obj = flash.flashObject;
-    if (obj) {
-        setTimeout(function() {
-            flash.detach();
-            console.log(flash.enabled, flash.enabled === false ? "ok" : "ng");
-            flash.attach(document.body, function(flashEnabled) {
-                console.log("re-attached. flashEnabled", flash.enabled, flashEnabled); // -> true, true
-            });
-        }, 3000);
-    }
-}
 
 var stopTime = Date.now() + 10 * 1000;
 var tid = setInterval(function() {

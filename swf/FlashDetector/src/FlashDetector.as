@@ -10,7 +10,6 @@ package {
         public  var logs:Array = [];        // debug log buffer
         // --- js <-> as bridge ---
         private var jsfn:String = ""; // JavaScript <- ActionScript callback function name
-        private var initialized:Boolean = false;
 
         public function FlashDetector() {
             stage.frameRate = 12;
@@ -28,10 +27,7 @@ package {
                 jsfn = "ExternalInterface." + ExternalInterface.objectID; // window.ExternalInterface[object-id]
 
                 // call window.ExternalInterface[object-id]("FLASH_READY");
-                ExternalInterface.addCallback("as_init", as_init);
-                ExternalInterface.addCallback("as_release", as_release);
                 ExternalInterface.addCallback("as_ping", as_ping);
-                ExternalInterface.addCallback("as_get_initialized", as_get_initialized);
                 ExternalInterface.call("ExternalInterface." + ExternalInterface.objectID, "FLASH_READY");
 
                 setSecuritySetting();
@@ -43,23 +39,9 @@ package {
             debug && logs.push("onStageResize");
         }
 
-        private function as_init():void {
-            debug && logs.push("as_init");
-            initialized = true;
-        }
-
         private function as_ping():String {
             debug && logs.push("as_ping");
             return "pong";
-        }
-
-        private function as_release():void {
-            debug && logs.push("as_release");
-            initialized = false;
-        }
-
-        private function as_get_initialized():Boolean {
-            return initialized;
         }
 
         private var logOutput:TextField = null;
@@ -92,7 +74,6 @@ package {
             Security.allowInsecureDomain("*"); // allow HTTP content <-> HTTPS content access
           //debug && logs.push("setSecuritySetting", "Security.allowDomain(*), allowInsecureDomain(*)");
         }
-
     }
 }
 

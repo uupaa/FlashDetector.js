@@ -18,21 +18,8 @@ __SOURCES__
 
 <div id="container" style="background-color:green; width:100%; height:100%"></div>
 <script>
-/*
-window.onload = function() {
-  var flash = new FlashDetector({
-    swf: "../../swf/FlashDetector/bin/FlashDetector.swf",
-    callback: function(flashEnabled) { // @arg Boolean
-      console.log(flashEnabled === flash.enabled); // -> true
-      alert(flash.enabled);
-    }
-  });
-}
- */
 // ExtenalInterface は js 側で removeChild した後にどうなるか?
-// 1. DOM Tree に戻さなくてもアクセスが可能か?
-// 2. DOM Tree に戻せばアクセスが可能になるか?
-// 3. 完全に利用不能になるのか?
+// DOM Tree に戻せばアクセスが可能になるか? -> 可能。Flash側でmainクラスのコンストラクタが呼ばれる(再初期化される)
 var flash = null;
 window.onload = function() {
     var id = "external123";
@@ -44,21 +31,11 @@ window.onload = function() {
         timeout: 2000,
         container: document.querySelector("#container"),
         flashvars: "debug=1",
-        callback: function(flashEnabled) {
-            console.log("flash.enabled", flash.enabled, flashEnabled); // -> true, true
-            use();
+        callback: function(flashEnabled, elapsedTime) {
+            console.log("flash.enabled", flash.enabled, flashEnabled, elapsedTime); // -> true, true, nnn
         }
     });
 };
-
-function use() {
-    setTimeout(function() {
-        flash.detach();
-        flash.attach(document.body, function(response) {
-            console.log("re-attached. flashEnabled", response); // -> FLASH_READY
-        });
-    }, 3000);
-}
 
 var stopTime = Date.now() + 10 * 1000;
 var tid = setInterval(function() {
