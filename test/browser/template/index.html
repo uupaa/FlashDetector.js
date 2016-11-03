@@ -21,13 +21,13 @@ __SOURCES__
 // ExtenalInterface は js 側で removeChild した後にどうなるか?
 // DOM Tree に戻せばアクセスが可能になるか? -> 可能。Flash側でmainクラスのコンストラクタが呼ばれる(再初期化される)
 var flash = null;
+var id = "external123";
 window.onload = function() {
-    var id = "external123";
     flash = new FlashDetector({
-        id: "id",
+        id: id,
         swf: "../../swf/FlashDetector/bin/FlashDetector.swf",
-        width: "640",
-        height: "320",
+        width: 640,
+        height: 320,
         timeout: 2000,
         container: document.querySelector("#container"),
         flashvars: "debug=1",

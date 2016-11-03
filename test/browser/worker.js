@@ -18,7 +18,7 @@ onmessage = function(event) {
     WebModule.VERBOSE = true;
     WebModule.PUBLISH = true;
 
-    
+    importScripts("../../node_modules/uupaa.useragent.js/lib/UserAgent.js");
     importScripts("../wmtools.js");
     importScripts("../../lib/FlashDetector.js");
 
